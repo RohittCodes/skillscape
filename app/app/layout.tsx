@@ -9,7 +9,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
       data: { user },
     } = await supabase.auth.getUser();
     if (!user) {
-      redirect("/");
+      redirect("/auth/sign-in");
     }
   };
 
