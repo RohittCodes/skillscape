@@ -12,7 +12,7 @@ export const SocialAuth = () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: provider,
       options: {
-        redirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}/auth/callback`,
+        redirectTo: `${origin}/auth/callback`,
       },
     });
 
