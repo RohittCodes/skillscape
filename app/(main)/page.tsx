@@ -45,7 +45,7 @@ export default function Home() {
         <h2 className="text-lg text-center text-muted-foreground">
           Disclaimer: Skillscape was never meant to be an EdTech platform.
           <br />
-          Don't expect anything extravagent from the creator(s).
+          Don&apos;t expect anything extravagent from the creator(s).
         </h2>
       </div>
     </div>
