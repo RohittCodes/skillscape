@@ -1,24 +1,46 @@
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import AuthButton from "./auth-button";
+import Image from "next/image";
+import { Tabs } from "../ui/tabs";
+import { ThemeToggle } from "./theme-toggle";
+import SearchBar from "./search-bar";
 
 const Navbar = () => {
   return (
-    <div className="text-primary py-[12px] bg-background shadow-sm shadow-primary-foreground">
-      <div className="container mx-auto px-0 flex justify-between items-center">
-        <h1 className="text-2xl font-bold">SkillScape</h1>
-        <nav>
-          <ul className="flex space-x-4">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-          </ul>
-        </nav>
-        <div className="flex items-center space-x-2">
-          <AuthButton />
+    <div className="text-primary pt-[16px] h-auto bg-background">
+      <div className="mx-[16px] px-4 py-2 flex justify-between border-[1px] border-border transition-colors items-center rounded-md">
+        <div className="flex items-center space-x-16">
+          <Link
+            href="/"
+            className="flex cursor-pointer space-x-[6px] items-center"
+          >
+            <h1 className="text-xl font-medium">✨SKILLSCAPE</h1>
+            {/* <div className="h-[22px] w-[2px] bg-rose-500 flex items-center justify-center rotate-[25deg]" />
+            <h1 className="text-xl font-semibold cursor-pointer">SKILLSCAPE</h1> */}
+            {/* <Image
+            src="/skillscape.svg"
+            alt="SkillScape Logo"
+            width={164}
+            height={40}
+            className="cursor-pointer"
+          /> */}
+          </Link>
+          <Tabs className="flex space-x-8 font-medium">
+            <Link href="/app/learn">Learn</Link>
+            <Link href="/app/projects">Projects</Link>
+            <Link href="/blogs">Blogs</Link>
+          </Tabs>
+        </div>
+        <SearchBar />
+        <div className="flex items-center">
+          <div className="flex items-center space-x-6 font-medium">
+            <Link href="/about">About</Link>
+            <AuthButton />
+          </div>
+          <div className="flex items-center space-x-3">
+            <div className="w-[2px] bg-primary-foreground h-[28px]" />
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </div>

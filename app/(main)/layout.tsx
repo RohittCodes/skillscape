@@ -13,7 +13,7 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
     redirect("/app");
   }
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       <Navbar />
       {children}
     </div>
